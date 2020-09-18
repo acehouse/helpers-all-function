@@ -1,7 +1,7 @@
 <?php
 /*
 *
-*	END getDateTimeDifferenceString (one pkg , THIS GOOD)
+*	START getDateTimeDifferenceString (one pkg , THIS GOOD)
 *
 */
 if (!function_exists('getDateTimeDifferenceString')) {
