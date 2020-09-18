@@ -1,6 +1,69 @@
 <?php
 /*
 *
+*	START check_birthday
+*
+*/
+function check_birthday($birthDate)
+{
+	$time = strtotime($birthDate);
+	if(date('m-d') == date('m-d', $time)) {
+	    return "Happy birthday!";
+	} else {
+		return $birthDate;
+	}
+	// echo check_birthday('1998-08-11');
+}
+/*
+*
+*	END check_birthday
+*
+*/
+
+/*
+*
+*	START DAY_LATER
+*
+*/
+if (!function_exists('day_later')) {
+	function day_later($timestamp)
+	{
+		$current = strtotime(date("Y-m-d"));
+		 $date    = strtotime($timestamp);
+
+		 $datediff = $date - $current;
+		 $difference = floor($datediff/(60*60*24));
+		 if($difference==0)
+		 {
+		    echo 'Hari Ini';
+		 }
+		 else if($difference > 1)
+		 {
+		    echo $timestamp;
+		 }
+		 else if($difference > 0)
+		 {
+		    echo 'Besok';
+		 }
+		 else if($difference < -1)
+		 {
+		    echo 'Lewat';
+		 }
+		 else
+		 {
+		    echo 'Kemarin';
+		 }  
+	}
+	// echo day_later('2020-09-19');
+}
+/*
+*
+*	END DAY_LATER
+*
+*/
+
+/*
+*
 *	START GREETING
 *
 */
