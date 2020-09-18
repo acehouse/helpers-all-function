@@ -1,5 +1,34 @@
 <?php
+/*
+*
+*	START format_interval
+*
+*/
+if (!function_exists('format_interval')) {
+	function format_interval($date1,$date2)
+	{
+		$diff = abs(strtotime($date2) - strtotime($date1));
 
+		$years = floor($diff / (365*60*60*24));
+		$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+		$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+
+		printf("%d tahun, %d bulan, %d hari\n", $years, $months, $days);
+	}
+	// echo format_interval("2008-03-24","2005-07-21");
+	//OUTPUT : 2 tahun, 8 bulan, 7 hari 
+}
+/*
+*
+*	END format_interval
+*
+*/
+
+/*
+*
+*	START tanggal_indo
+*
+*/
 if (!function_exists('tanggal_indo')) {
 	function tanggal_indo($tanggal, $cetak_hari = false)
 	{
@@ -37,4 +66,8 @@ if (!function_exists('tanggal_indo')) {
 	// echo tanggal_indo ('2016-03-20'); // Hasil: 20 Maret 2016;
 	// echo tanggal_indo ('2016-03-20', true); // Hasil: Minggu, 20 Maret 2016
 }
-// end tanggal_indo
+/*
+*
+*	END tanggal_indo
+*
+*/

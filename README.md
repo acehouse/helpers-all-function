@@ -1,2 +1,2 @@
-# php-function-helpers
-All php helpers function
+# function-helpers
+All helpers function
