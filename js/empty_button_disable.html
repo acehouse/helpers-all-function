@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>empty button</title>
+</head>
+<body>
+  <form>
+  <label>do not empty</label><br>
+  <input type="text" name="textField" /><br>
+  <textarea rows="4" cols="30" id="texta"></textarea>
+  <br>
+  <input type="submit" value="next" />
+    
+  </form>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script>
+  $(document).ready(function () {
+    $('input[type="submit"]').attr('disabled', true);
+    $('input[type="text"],textarea').on('keyup', function () {
+        var textarea_value = $("#texta").val();
+        var text_value = $('input[name="textField"]').val();
+        if (textarea_value != '' && text_value != '') {
+            $('input[type="submit"]').attr('disabled', false);
+        } else {
+            $('input[type="submit"]').attr('disabled', true);
+        }
+    });
+});
+ </script>
+</body>
+</html>
